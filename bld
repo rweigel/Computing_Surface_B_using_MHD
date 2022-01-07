@@ -1,0 +1,13 @@
+#!/bin/bash
+
+Doc=Computing_Surface_B
+
+pdflatex $Doc.tex
+bibtex $Doc
+pdflatex $Doc.tex
+pdflatex $Doc.tex
+
+rm -v $Doc.{log,aux,bbl,blg}
+
+zathura $Doc.pdf
+rm -v $Doc.pdf
