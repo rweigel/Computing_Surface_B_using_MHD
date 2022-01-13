@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Doc=Computing_Surface_B
+Doc=main
 
 pdflatex $Doc.tex
 bibtex $Doc

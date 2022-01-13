@@ -425,6 +425,19 @@ Thus:
     \B(\x_0) &= \B_{\text{MethodB}}(\x_0)
 \end{align}
 
+In summary, if the results of the simulation are physically meaningful,
+we expect that
+$\forall \x_0 \in \M, \B_{\text{MethodA}}(\x_0) = \B_{\text{MethodB}}(\x_0) = \B(\x_0)$.
+Note, by cancelling the like terms in ... and ...,
+this implies:
+
+\begin{align}
+\forall \x_0 \in \M \\
+    \B_{\G} (\x_0) &= \surfInt{\I}
+\end{align}
+
+The above can be used as a direct self consistency check.
+
 \section{Numerical computations using SWMF} \label{computations}
 
 \subsection{Setup}
@@ -512,22 +525,22 @@ Method (B) does not.
   \label{CARRcompareAB}
 \end{figure}
 
-\begin{figure}[H] 
-  \includegraphics[width=\textwidth]{test_iono_GMpoint1.pdf}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{figures/DIPTSUR2-consistency.pdf}
   \caption{
 It is important to keep in mind that for this point and run,
 the values of $\B_{\G}$ are a relatively small fraction of $\B$.
 Upon replotting only $\B_{\G}$ and $\oint_{\I}$,
-we obtain a hopefully more direct comparison for the consistancy of the MHD solver with the ionosphere models.
+we obtain a hopefully more direct comparison for the consistency of the MHD solver with the ionosphere models.
 Note $-\B_{\G}$=$\oint_{\I}$ is equivalent to Method(B)=Method(A).
   }
-  \label{CARR_conscheck}
+  \label{CARRconsistency}
 \end{figure}
 
 \textbf{SWPC\_SWMF\_052811\_2:}
 
 \begin{figure}[H]
-  %\includegraphics[width=\textwidth]{}
+  \includegraphics[width=\textwidth]{figures/SWPC_SWMF_052811_2-reproduceswmf.pdf}
   \caption{
   This plot is for SWPC\_SWMF\_052811\_2.
   It is the analogous plots to \ref{CARRreproduceswmf}
@@ -536,7 +549,7 @@ Note $-\B_{\G}$=$\oint_{\I}$ is equivalent to Method(B)=Method(A).
 \end{figure}
 
 \begin{figure}[H]
-  %\includegraphics[width=\textwidth]{}
+  \includegraphics[width=\textwidth]{figures/SWPC_SWMF_052811_2-compare123.pdf}
   \caption{
   This plot is for SWPC\_SWMF\_052811\_2.
   It is the analogous plots to \ref{CARRcompare123}
@@ -545,13 +558,23 @@ Note $-\B_{\G}$=$\oint_{\I}$ is equivalent to Method(B)=Method(A).
 \end{figure}
 
 \begin{figure}[H]
-  %\includegraphics[width=\textwidth]{}
+  \includegraphics[width=\textwidth]{figures/SWPC_SWMF_052811_2-compareAB.pdf}
   \caption{
   This plot is for SWPC\_SWMF\_052811\_2.
   It is the analogous plots to \ref{CARRcompareAB}
   }
   \label{SWPCcompareAB}
 \end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{figures/SWPC_SWMF_052811_2-consistency.pdf}
+  \caption{
+  This plot is for SWPC\_SWMF\_052811\_2.
+  It is the analogous plots to \ref{CARRconsistency}
+  }
+  \label{SWPCconsistency}
+\end{figure}
+
 
 \section{Conclusion}
 
